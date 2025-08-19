@@ -4,6 +4,7 @@ import React, { useState, useEffect, use } from 'react'
 import Head from 'next/head'
 import Sidebar from '../Sidebar';
 import MenuBarMobile from '../MenuBarMobile';
+import { Commet } from 'react-loading-indicators';
 
 interface LayoutProps {
     pageTitle?: string;
@@ -38,7 +39,7 @@ export default function Layout({ pageTitle, children }: LayoutProps) {
                     <div className="flex flex-col flex-grow w-screen md:w-full h-screen p-4 overflow-y-auto md:ml-[250px]">
                         {loading ?
                             <div className="flex items-center justify-center h-full">
-                                <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-white"></div>
+                                <Commet color={["#32cd32", "#327fcd", "#cd32cd", "#cd8032"]} />
                             </div> :
                             <>{children}</>}
                     </div>
